@@ -50,15 +50,16 @@ python -m venv venv
 ```bash
 venv\Scripts\activate
 ```
-###3️⃣ Install dependencies
+
+### 3️⃣ Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-###4️⃣ Run the application
+### 4️⃣ Run the application
 ```bash
 uvicorn app.main:app --reload
 ```
-###5️⃣ Open Swagger UI
+### 5️⃣ Open Swagger UI
 
 Open your browser and go to:
 ```bash
@@ -67,28 +68,29 @@ http://127.0.0.1:8000/docs
 
 ---
 
-##📡 API Usage
+## 📡 API Usage
 POST /synthesize
 
-###Request Body :
+### Request Body :
 ```json
 {
-  "text": "This is absolutely amazing news, I am very excited about it!"
+  "text": "Nothing is working and this is really irritating."
 }
 ```
 
-###Response :
+### Response :
 ```json
 {
-  "emotion": "excited",
-  "intensity": 0.82,
-  "audio_file": "output/output.wav"
+  "emotion": "concerned",
+  "intensity": 0.5095,
+  "audio_file": "output\\output.wav",
+  "playback_url": "http://127.0.0.1:8000/play"
 }
 ```
 The generated audio file can be played locally from the output directory.
 ---
 
-##🧠 Design Choices & Emotion Mapping
+## 🧠 Design Choices & Emotion Mapping
 
 Emotion Detection
 
@@ -157,8 +159,8 @@ Frustrated :
 
 This deterministic mapping ensures the system remains explainable, reproducible, and easy to extend.
 
----
-##🔮 Future Improvements:
+--- 
+## 🔮 Future Improvements:
     -> SSML-based fine-grained voice control
 
     -> Real-time audio streaming in API response
@@ -168,7 +170,7 @@ This deterministic mapping ensures the system remains explainable, reproducible,
     -> Frontend UI with embedded audio playback.
 ---
 
-##👤 Author
+## 👤 Author
 
 Krishna Teja Regintala
 ECE Undergraduate | Machine Learning & NLP Enthusiast | DSA Practitioner
