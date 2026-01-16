@@ -175,6 +175,37 @@ The service is implemented as a REST API to allow easy integration with web, mob
 FastAPI was chosen for its automatic documentation, validation, and production readiness.
 
 ---
+
+## 📸 Screenshots :
+
+### 1️⃣ Swagger UI
+_Text input for emotion-aware speech synthesis_
+
+![Swagger Synthesize Request](screenshots/01_swagger_page.png)
+
+---
+
+### 2️⃣ Swagger_request
+_Text input for emotion-aware speech synthesis_
+
+![API Response](screenshots/02_swagger_synthesize_request.png)
+
+---
+
+### 3️⃣ API Response – Emotion & Intensity
+_Detected emotion, intensity, and playback URL_
+
+![Swagger Endpoints](screenshots/03_api_response_emotion_intensity.png)
+
+---
+
+### 4️⃣ Audio Playback Page
+_Embedded audio player rendering synthesized speech_
+
+![Audio Playback](screenshots/04_audio_playback_page.png)
+
+---
+
 ## 📁 Project Structure :
 ```bash
 app/
