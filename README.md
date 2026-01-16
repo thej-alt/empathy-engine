@@ -172,7 +172,8 @@ This deterministic mapping ensures the system remains explainable, reproducible,
 
 ## 👤 Author
 
-| Krishna Teja Regintala. |
+Krishna Teja Regintala.
 
 ECE Undergraduate | Machine Learning & NLP Enthusiast | DSA Practitioner
+
 ---
