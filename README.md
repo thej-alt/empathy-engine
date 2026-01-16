@@ -176,12 +176,16 @@ FastAPI was chosen for its automatic documentation, validation, and production r
 
 ---
 ## 📁 Project Structure :
+```bash
 app/
  ├── main.py            # FastAPI entry point
  ├── core/
  │   ├── sentiment.py   # Emotion detection logic
- │   ├── voice_engine.py# Voice modulation & TTS
+ │   ├── voice_engine.py # Voice modulation & TTS
  │   └── schemas.py     # Pydantic models
+
+```
+
 ---
 ## ⚠️ Limitations :
 - Emotion detection is rule-based and may misclassify ambiguous text
