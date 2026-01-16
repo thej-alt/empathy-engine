@@ -170,6 +170,25 @@ This deterministic mapping ensures the system remains explainable, reproducible,
     -> Frontend UI with embedded audio playback.
 ---
 
+## 🧩 API Design Notes :
+The service is implemented as a REST API to allow easy integration with web, mobile, or backend systems. 
+FastAPI was chosen for its automatic documentation, validation, and production readiness.
+
+---
+## 📁 Project Structure :
+app/
+ ├── main.py            # FastAPI entry point
+ ├── core/
+ │   ├── sentiment.py   # Emotion detection logic
+ │   ├── voice_engine.py# Voice modulation & TTS
+ │   └── schemas.py     # Pydantic models
+---
+## ⚠️ Limitations :
+- Emotion detection is rule-based and may misclassify ambiguous text
+- Audio playback is file-based, not streamed
+
+---
+
 ## 👤 Author
 
 Krishna Teja Regintala.
