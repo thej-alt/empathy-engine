@@ -41,137 +41,135 @@ Unlike traditional robotic TTS systems, this service detects the **emotion and i
 ```bash
 git clone https://github.com/thej-alt/empathy-engine.git
 cd empathy-engine
-2️⃣ Create and activate virtual environment
-bash
-Copy code
+```
+### 2️⃣ Create and activate virtual environment
+```bash
 python -m venv venv
-Windows:
-
-bash
-Copy code
+```
+### Windows:
+```bash
 venv\Scripts\activate
-3️⃣ Install dependencies
-bash
-Copy code
+```
+###3️⃣ Install dependencies
+```bash
 pip install -r requirements.txt
-4️⃣ Run the application
-bash
-Copy code
+```
+###4️⃣ Run the application
+```bash
 uvicorn app.main:app --reload
-5️⃣ Open Swagger UI
+```
+###5️⃣ Open Swagger UI
+
 Open your browser and go to:
-
-arduino
-Copy code
+```bash
 http://127.0.0.1:8000/docs
-📡 API Usage
-POST /synthesize
-Request Body
+```
 
-json
-Copy code
+---
+
+##📡 API Usage
+POST /synthesize
+
+###Request Body :
+```json
 {
   "text": "This is absolutely amazing news, I am very excited about it!"
 }
-Response
+```
 
-json
-Copy code
+###Response :
+```json
 {
   "emotion": "excited",
   "intensity": 0.82,
   "audio_file": "output/output.wav"
 }
+```
 The generated audio file can be played locally from the output directory.
+---
 
-🧠 Design Choices & Emotion Mapping
+##🧠 Design Choices & Emotion Mapping
+
 Emotion Detection
+
 VADER sentiment analysis was chosen for its speed, simplicity, and interpretability.
 
 The compound sentiment score is used to classify emotions:
-
-Compound Score Range	Emotion
-≥ 0.8	Excited
-0.6 – 0.79	Happy
--0.2 – 0.2	Neutral
--0.59 – -0.21	Concerned
-≤ -0.6	Frustrated
+| Compound Score Range | Emotion    |
+| -------------------- | ---------- |
+| ≥ 0.8                | Excited    |
+| 0.6 – 0.79           | Happy      |
+| -0.2 – 0.2           | Neutral    |
+| -0.59 – -0.21        | Concerned  |
+| ≤ -0.6               | Frustrated |
 
 This separation allows the system to distinguish between strong excitement, general positivity, and mild concern, which is crucial for realistic voice modulation.
 
-Intensity Scaling
+Intensity Scaling :
+
 Emotion intensity is calculated as the absolute value of the compound sentiment score.
 
 This intensity value controls how strongly voice parameters are modulated.
 
-Voice Modulation Logic
-Each detected emotion maps to a predefined voice configuration:
+Voice Modulation Logic :
 
-Excited
+Each detected emotion maps to a predefined voice configuration :
 
-Faster speech rate
+Excited :
 
-Higher pitch
+    Faster speech rate
 
-Increased volume
+    Higher pitch
 
-Happy
+    Increased volume
 
-Slightly faster rate
+Happy :
 
-Moderately higher pitch
+    Slightly faster rate
 
-Normal volume
+    Moderately higher pitch
 
-Neutral
+    Normal volume
 
-Default rate
+Neutral :
 
-Default pitch
+    Default rate
 
-Default volume
+    Default pitch
 
-Concerned
+    Default volume
 
-Slightly slower rate
+Concerned :
 
-Lower pitch
+    Slightly slower rate
 
-Softer volume
+    Lower pitch
 
-Frustrated
+    Softer volume
 
-Slower speech rate
+Frustrated :
 
-Lower pitch
+    Slower speech rate
 
-Reduced volume
+    Lower pitch
+
+    Reduced volume
 
 This deterministic mapping ensures the system remains explainable, reproducible, and easy to extend.
 
-🔮 Future Improvements
-SSML-based fine-grained voice control
+---
+##🔮 Future Improvements:
+    -> SSML-based fine-grained voice control
 
-Real-time audio streaming in API response
+    -> Real-time audio streaming in API response
 
-Transformer-based emotion classification
+    -> Transformer-based emotion classification
 
-Frontend UI with embedded audio playback
-
-👤 Author
-Krishna Teja Regintala
-ECE Undergraduate | Machine Learning & NLP Enthusiast | DSA Practitioner
-
-yaml
-Copy code
-
+    -> Frontend UI with embedded audio playback.
 ---
 
-## ✅ After this (FINAL STEPS)
+##👤 Author
 
-Run in **Git Bash**:
-
-```bash
-git add README.md
-git commit -m "Add comprehensive README with excited emotion support"
-git push
+Krishna Teja Regintala
+ECE Undergraduate | Machine Learning & NLP Enthusiast | DSA Practitioner
+---
